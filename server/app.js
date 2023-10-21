@@ -7,7 +7,6 @@ const cors = require("cors")
 const multer = require('multer');
 const fs = require('fs');
 const path = require('path');
-const { MONGOURI } = require("./config/prod");
 const app = express()
 dotenv.config();
 app.use(express.json())
@@ -18,8 +17,8 @@ app.use(cors())
 // MongoDB Connection 
 //mongoose.connect("mongodb://localhost:27017/user");
 
-
-mongoose.connect(MONGOURI).then(() => {
+const DB = 'mongodb+srv://signifyteam:signifytechnologies@cluster0.hzhe076.mongodb.net/project1?retryWrites=true&w=majority';
+mongoose.connect(DB).then(() => {
   console.log(`connection successful`);
 
 }).catch((err) => console.log(`no connection`));
@@ -169,11 +168,11 @@ app.get('/download-pdf/:email', async (req, res) => {
 //Heroku 
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.resolve(__dirname,'server', 'client', 'dist')));
+  app.use(express.static(path.resolve(__dirname, 'client', 'dist')));
 
   // All requests that don't match static files should serve the 'index.html'
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname,'server', 'client', 'dist', 'index.html'));
+    res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
   });
 }
 
