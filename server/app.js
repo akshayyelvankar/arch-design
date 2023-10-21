@@ -168,8 +168,12 @@ app.get('/download-pdf/:email', async (req, res) => {
 //Heroku 
 
 if(process.env.NODE_ENV =="production"){
+   const path =require('path')
+   app.get('/',(req,res)=>{
+    app.use(express.static(path.resolve(__dirname,'client','dist')));
+    res.sendFile(path.resolve(__dirname,'client','dist','index.html'))
+   })
   
-  app.use(express.static("client/dist"));
 }
 
 // Server Listen    
