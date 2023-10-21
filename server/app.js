@@ -167,13 +167,13 @@ app.get('/download-pdf/:email', async (req, res) => {
 
 //Heroku 
 
-if(process.env.NODE_ENV =="production"){
-   const path =require('path')
-   app.get('/',(req,res)=>{
-    app.use(express.static(path.resolve(__dirname,'client','dist')));
-    res.sendFile(path.resolve(__dirname,'client','dist','index.html'))
-   })
-  
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.resolve(__dirname, 'client', 'dist')));
+
+  // All requests that don't match static files should serve the 'index.html'
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
+  });
 }
 
 // Server Listen    
