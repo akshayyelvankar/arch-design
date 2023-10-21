@@ -165,9 +165,15 @@ app.get('/download-pdf/:email', async (req, res) => {
   }
 });
 
+//Heroku 
+
+if(process.env.NODE_ENV =="production"){
+  
+  app.use(express.static("client/dist"));
+}
 
 // Server Listen    
-const PORT = process.env.PORT;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
   console.log("Server is Running on port 3001")
 
