@@ -10,13 +10,26 @@ const path = require('path');
 const app = express()
 dotenv.config();
 app.use(express.json())
-app.use(cors(
-  {
-    origin:["https://arch-design-frontend.vercel.app"],
-    methods:["POST","GET"],
-    credentials:true
-  }
-))
+
+const allowedOrigins = ['https://arch-design-frontend.vercel.app'];
+
+const corsOptions = {
+  origin: (origin, callback) => {
+    if (allowedOrigins.includes(origin) || !origin) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+};
+app.use(cors(corsOptions));
+// app.use(cors(
+//   {
+//     origin:["https://arch-design-frontend.vercel.app"],
+//     methods:["POST","GET"],
+//     credentials:true
+//   }
+// ))
 
 
 
