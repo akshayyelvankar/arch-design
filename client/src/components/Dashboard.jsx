@@ -10,7 +10,7 @@ const Dashboard = () => {
   useEffect(()=>{
     async function fetchData(){
         try{
-            const response = await axios.get('http://localhost:3001/users');
+            const response = await axios.get('https://arch-design-api.vercel.app/users');
             setUsers(response.data);
         } catch(error){
             console.log(error)

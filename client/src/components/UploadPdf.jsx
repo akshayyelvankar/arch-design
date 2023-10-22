@@ -13,7 +13,7 @@ const UploadPdf = () => {
     try {
       const formData = new FormData()
       formData.append('file', file, 'file.pdf')
-      const res = await axios.post(`http://localhost:3001/upload/${email}`, formData, {
+      const res = await axios.post(`https://arch-design-api.vercel.app/upload/${email}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -36,7 +36,7 @@ const UploadPdf = () => {
   const handleDownload = async (e) => {
     e.preventDefault()
     try {
-      const response = await axios.get(`http://localhost:3001/download-pdf/${email}`, {
+      const response = await axios.get(`https://arch-design-api.vercel.app/download-pdf/${email}`, {
         responseType: 'blob', // Specify that the response should be treated as binary data
       });
       console.log(response)

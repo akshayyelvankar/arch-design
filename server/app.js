@@ -12,7 +12,7 @@ dotenv.config();
 app.use(express.json())
 app.use(cors(
   {
-    origin:[""],
+    origin:["https://arch-design-api.vercel.app"],
     methods:["POST","GET"],
     credentials:true
   }

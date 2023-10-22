@@ -208,7 +208,7 @@ const Registration = () => {
 
   // Email Verification with Otp
 
-  const baseUrl = "http://localhost:3001";
+  const baseUrl = "https://arch-design-api.vercel.app";
 
   const sendEmail = async (e) => {
     e.preventDefault()
@@ -247,7 +247,7 @@ const Registration = () => {
 
     e.preventDefault()
 
-    axios.post('http://localhost:3001/register', {
+    axios.post('https://arch-design-api.vercel.app/register', {
       userId: '', // Generate this based on the latest user ID
       role,
       type,
