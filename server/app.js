@@ -172,7 +172,9 @@ app.get('/download-pdf/:email', async (req, res) => {
 });
 
 //Heroku 
-
+app.get("/",(req,res)=>{
+  res.json("Hello")
+})
 
 
 // Server Listen    
