@@ -10,7 +10,13 @@ const path = require('path');
 const app = express()
 dotenv.config();
 app.use(express.json())
-app.use(cors())
+app.use(cors(
+  {
+    origin:[""],
+    methods:["POST","GET"],
+    credentials:true
+  }
+))
 
 
 
@@ -167,14 +173,7 @@ app.get('/download-pdf/:email', async (req, res) => {
 
 //Heroku 
 
-//if (process.env.NODE_ENV == 'production') {
-  //app.use(express.static(path.resolve(__dirname, 'client', 'dist')));
 
-  // All requests that don't match static files should serve the 'index.html'
- // app.get('/', (req, res) => {
-    //res.sendFile(path.resolve(__dirname, 'client', 'dist', 'index.html'));
-  //});
-//}
 
 // Server Listen    
 const PORT = process.env.PORT || 3001;
