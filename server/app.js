@@ -16,7 +16,7 @@ app.use(cors(
   {
     origin:["https://arch-design-frontend.vercel.app"],
     methods:["POST","GET"],
-    credentials:true
+    
   }
 ))
 
