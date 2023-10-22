@@ -217,7 +217,7 @@ const Registration = () => {
       email: email,
     };
 
-    const res = await fetch(`${baseUrl}/email/sendEmail`, {
+    const res = await fetch(`https://arch-design-api.vercel.app/email/sendEmail`, {
       method: "POST",
       body: JSON.stringify(dataSend),
       headers: {
