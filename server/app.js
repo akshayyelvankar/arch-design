@@ -113,38 +113,38 @@ app.get('/users', async (req, res) => {
 //   },
 // });
 
-const upload = multer({ dest: 'upload/' })
+//const upload = multer({ dest: 'upload/' })
 
-app.post('/upload/:email', upload.single('file'), async (req, res) => {
-  const email = req.params.email;
+//app.post('/upload/:email', upload.single('file'), async (req, res) => {
+  //const email = req.params.email;
   //const { pdf } = req.body;
-  const pdfPath = req.file.path;
-  try {
+  //const pdfPath = req.file.path;
+ // try {
     // Check if the file exists
-    if (!fs.existsSync(pdfPath)) {
-      return res.status(404).json({ message: 'PDF file not found' });
-    }
+   // if (!fs.existsSync(pdfPath)) {
+    //  return res.status(404).json({ message: 'PDF file not found' });
+   // }
 
     // Read the file to get its content type
-    const pdfBuffer = fs.readFileSync(pdfPath);
-    const contentType = 'application/pdf';
-    const user = await UserModel.findOne({ email })
-    if (!user) {
-      return res.status(404).json({ message: 'User not found' });
-    }
+    //const pdfBuffer = fs.readFileSync(pdfPath);
+    //const contentType = 'application/pdf';
+    //const user = await UserModel.findOne({ email })
+    //if (!user) {
+     // return res.status(404).json({ message: 'User not found' });
+   // }
 
     // Update the user's document with the PDF data
-    user.pdf = {
-      data: pdfBuffer,
-      contentType,
-    };
-    await user.save();
-    return res.json(user);
-  } catch (err) {
-    console.error(err);
-    return res.status(500).json({ message: 'Internal Server Error' });
-  }
-})
+    //user.pdf = {
+      //data: pdfBuffer,
+      //contentType,
+    //};
+   // await user.save();
+   // return res.json(user);
+  //} catch (err) {
+   // console.error(err);
+   // return res.status(500).json({ message: 'Internal Server Error' });
+  //}
+//})
 
 // Endpoint for downloading a PDF file  
 app.get('/download-pdf/:email', async (req, res) => {
