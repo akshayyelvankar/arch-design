@@ -104,14 +104,14 @@ app.get('/users', async (req, res) => {
 
 //pdf upload and download code
 
-const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
-    cb(null, './public/images');
-  },
-  filename: (req, file, cb) => {
-    cb(null, Date.now() + '-' + file.originalname);
-  },
-});
+// const storage = multer.diskStorage({
+//   destination: (req, file, cb) => {
+//     cb(null, './public/images');
+//   },
+//   filename: (req, file, cb) => {
+//     cb(null, Date.now() + '-' + file.originalname);
+//   },
+// });
 
 const upload = multer({ dest: 'upload/' })
 
