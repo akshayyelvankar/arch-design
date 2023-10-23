@@ -20,10 +20,13 @@ app.use(cors(
   }
 ))
 
-app.use((req,res,next)=>{
-  res.header('Access-Control-Allow-Origin','*')
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://arch-design-frontend.vercel.app');
+  // You can also specify which HTTP methods and headers are allowed.
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type');
   next();
-})
+});
 
 
 
