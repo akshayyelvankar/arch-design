@@ -16,7 +16,7 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, 'client/dist')));
 
 // Handle all routes by serving the index.html file
-app.get('/.*', (req, res) => {
+app.get(/.*/, (req, res) => {
   res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
 });
 app.use(cors(
