@@ -124,8 +124,11 @@ const Login = () => {
                     setIsSubmitEnabled(false); // Disable the submit button after submission
                     navigate('/')
                 }
+                else{
+                  alert('Login Failed')
+                }
             })
-            .catch(err => console.log(err))
+            
     }
     return (
         <Wrapper>
@@ -199,7 +202,7 @@ const Login = () => {
                     </button>
                 </div>
                 <div className="forgot-password-link">
-                    <a href="/forgot-password">Forgot Password</a>
+                    <NavLink href="#">Forgot Password</NavLink>
                 </div>
 
                 <GoogleLoginButton>

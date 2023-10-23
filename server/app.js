@@ -12,6 +12,13 @@ dotenv.config();
 app.use(express.json())
 
 
+// Serve static files from the build folder
+app.use(express.static(path.join(__dirname, 'client/dist')));
+
+// Handle all routes by serving the index.html file
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
+});
 app.use(cors(
   {
     origin:["https://arch-design-frontend.vercel.app"],
