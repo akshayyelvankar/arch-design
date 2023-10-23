@@ -36,7 +36,7 @@ const Registration = () => {
 
   const navigate = useNavigate()
    
-  //axios.defaults.withCredentials =true
+  axios.defaults.withCredentials =true
   const handleEmailChange = (event) => {
     const enteredEmail = event.target.value;
     setEmail(enteredEmail);
