@@ -13,11 +13,11 @@ app.use(express.json())
 
 
 // Serve static files from the build folder
-app.use(express.static(path.join(__dirname, 'client/dist')));
+app.use(express.static(path.join(__dirname, 'dist')));
 
 // Handle all routes by serving the index.html file
-app.get(/.*/, (req, res) => {
-  res.sendFile(path.join(__dirname, 'client/dist', 'index.html'));
+app.get('/*', (req, res) => {
+  res.sendFile(path.join(__dirname, 'dist', 'index.html'));
 });
 app.use(cors(
   {
