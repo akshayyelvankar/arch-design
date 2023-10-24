@@ -244,6 +244,7 @@ height:auto;
     width: 100%;
     padding: 20px;
     background: url('/pratik/images/bg.jpg') no-repeat center center fixed;
+    background-size: cover;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
 
