@@ -16,7 +16,7 @@ const App = () => {
   return (
     <>
       <Header />
-       <Routes>
+       <Routes basename='/arch-design'>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About/>}/>
         <Route path='/schooldesign' element={<SchoolDesign />} />
