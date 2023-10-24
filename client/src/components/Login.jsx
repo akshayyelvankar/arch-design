@@ -231,7 +231,7 @@ const Wrapper = styled.section`
 width: 50%;
 margin: auto;
 padding: 20px;
-    
+height:auto;    
   
 
   h1 {
