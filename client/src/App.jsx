@@ -16,7 +16,7 @@ const App = () => {
   return (
     <>
       <Header />
-       <Routes basename='/arch-design'>
+       <Routes basename='/arch-design-frontend.vercel.app'>
         <Route path='/' element={<Home />} />
         <Route path='/about' element={<About/>}/>
         <Route path='/schooldesign' element={<SchoolDesign />} />
