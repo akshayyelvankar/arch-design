@@ -124,7 +124,9 @@ const Login = () => {
                     setIsSubmitEnabled(false); // Disable the submit button after submission
                     navigate('/')
                 }
-               
+                else{
+                  alert('Login Failed')
+                }
             })
             .catch(err=>console.log(err))
     }
