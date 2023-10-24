@@ -124,11 +124,16 @@ const Login = () => {
                     setIsSubmitEnabled(false); // Disable the submit button after submission
                     navigate('/')
                 }
-                else{
-                  alert('Login Failed')
+                if(result.data ==="The Password is Incorrect")
+                {
+                  alert("Password is Incorrect")
+                }
+                if(result.data ==="No Record Exist")
+                {
+                  alert("No Record Exist")
                 }
             })
-            .catch(err=>console.log(err))
+            
     }
     return (
         <Wrapper>
