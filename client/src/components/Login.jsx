@@ -201,7 +201,7 @@ const Login = () => {
 
                 </div>
 
-                <div className={`professional-button ${isLoginButtonVisible ? 'visible' : 'hidden'}`}>
+                <div className={`professional-button ${isLoginButtonVisible ? 'visible' : 'hidden'}mt-2`}>
                     <button type="submit" disabled={!isSubmitEnabled} onClick={(e)=>handleSubmit(e)}>
                         Login
                     </button>
