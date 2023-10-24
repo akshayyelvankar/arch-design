@@ -225,11 +225,12 @@ const Login = () => {
 
 const Wrapper = styled.section`
 
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: auto; 
+@media (max-width: 800px){
+  width: 80%;
+}
+width: 50%;
+margin: auto;
+padding: 20px;
     
   
 
@@ -240,7 +241,7 @@ const Wrapper = styled.section`
   }
 
   form {
-    width: 50%;
+    width: 100%;
     padding: 20px;
     background: url('/pratik/images/bg.jpg') no-repeat center center fixed;
     border-radius: 10px;
