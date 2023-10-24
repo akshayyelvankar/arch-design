@@ -7,10 +7,8 @@
     {
       "src":"/[^.]+",
       "dest":"/"
-    },
-    {
-      "src":"/about", "dest":"About"
     }
+    
   ]
 }
 
