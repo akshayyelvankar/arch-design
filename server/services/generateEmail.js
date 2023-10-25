@@ -33,7 +33,7 @@ const sendEmail = expressAsyncHandler(async (req, res) => {
 
   if (emailAlreadyExists) {
     // The email is already registered
-    res.json({message:"Email is already registered"})
+    res.status(409).json({message:"Email is already registered"})
     
   }
   else{
