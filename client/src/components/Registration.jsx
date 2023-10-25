@@ -239,13 +239,21 @@ const Registration = () => {
           console.log('otp is:', sotp)
           setUserotp(sotp)
         }
+        if(data.message ==='User already exists with this email.')
+        {
+          alert('User already exists with this email.')
+        }
+        if(data.message === 'Internal server error')
+        {
+          alert('Internal server error')
+        }
         
       })
-      .catch(err=>{
-        if(err.response && err.response.status === 400){
-          alert('User with this email already exists.')
-        }
-      })
+      // .catch(err=>{
+      //   if(err.response && err.response.status === 400){
+      //     alert('User with this email already exists.')
+      //   }
+      // })
   };
 
 
@@ -290,7 +298,8 @@ const Registration = () => {
       .catch(err => {
         if (err.response && err.response.status === 400) {
           alert('User with this email already exists.')
-        } else {
+        }
+       else {
           console.error(err);
         }
       })
