@@ -2,6 +2,24 @@ import React from 'react'
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 const Header = () => {
+    
+      document.addEventListener('DOMContentLoaded', function () {
+      // Get the navigation links
+      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+  
+      // Get the mobile navbar toggle button
+      const navbarToggle = document.getElementById('navbarToggle');
+  
+      // Close the navbar when a navigation link is clicked
+      navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+          if (navbarToggle.getAttribute('aria-expanded') === 'true') {
+            navbarToggle.click();
+          }
+        });
+      });
+    });
+    
     return (
         <Wrapper>
             <nav className="navbar navbars navbar-expand-lg navbar-light bg-light ">
