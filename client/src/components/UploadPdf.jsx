@@ -16,7 +16,9 @@ const UploadPdf = () => {
       const res = await axios.post(`https://arch-design-api.vercel.app/upload/${email}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
+          'Access-Control-Allow-Origin': '*' ,
         },
+        mode: "cors",
       })
       if (res.data) {
         alert('PDF uploaded successfully!')
