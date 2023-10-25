@@ -260,7 +260,7 @@ const Registration = () => {
   const mobileNoPattern = /^[0-9]{10}$/;
 
   if (!mobileNo.match(mobileNoPattern)) {
-    alert('Invalid mobile number format');
+    alert('Invalid Mobile Number Format');
     return; 
   }
 
