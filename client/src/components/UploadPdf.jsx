@@ -54,9 +54,9 @@ const UploadPdf = () => {
       window.URL.revokeObjectURL(url);
     } catch (error) {
       if(error){
-        alert("Error downloading PDF file")
+        alert("Error Downloading Pdf File")
       }
-      console.error('Error downloading PDF file:', error);
+      console.error('Error Downloading Pdf File:', error);
     }
   };
   return (
