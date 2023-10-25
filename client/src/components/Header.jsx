@@ -53,11 +53,11 @@ const Header = () => {
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <NavLink className="dropdown-item" to={'/schooldesign'}>School Design</NavLink>
+                                    <NavLink className="dropdown-item nav-link" to={'/schooldesign'}>School Design</NavLink>
                                 </li>
                                 <li><hr className="dropdown-divider" /></li>
                                 <li>
-                                    <NavLink className="dropdown-item" to={'/landscapedesign'}>Landscape Design</NavLink>
+                                    <NavLink className="dropdown-item nav-link" to={'/landscapedesign'}>Landscape Design</NavLink>
                                 </li>
                             </ul>
                         </li>
@@ -66,9 +66,9 @@ const Header = () => {
                                 Register
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><NavLink className="dropdown-item" to={'/login'}>Login</NavLink></li>
+                                <li><NavLink className="dropdown-item nav-link" to={'/login'}>Login</NavLink></li>
                                 <li><hr className="dropdown-divider" /></li>
-                                <li><NavLink className="dropdown-item" to={'/register'}>Register</NavLink></li>
+                                <li><NavLink className="dropdown-item nav-link" to={'/register'}>Register</NavLink></li>
                             </ul>
                         </li>
                         <li className="nav-item">
