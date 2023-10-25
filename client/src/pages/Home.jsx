@@ -1,4 +1,5 @@
 import React , {useState, useEffect}from 'react';
+import {useNavigate} from 'react-router-dom'
 import styled from 'styled-components';
 import img3 from '../../public/pratik/images/img3.jpg';
 import img1 from '../../public/pratik/images/img1.jpg';
@@ -9,6 +10,11 @@ import banner from '../../public/pratik/images/banner3.jpg';
 function Home() {
   const targetDate = new Date("2023-12-31T23:59:00").getTime();
 
+    const navigate=useNavigate()
+    const Register=(e)=>{
+      e.preventDefault()
+      navigate('/register')
+    }
     // Calculate the remaining time and update it every second
     const calculateTimeRemaining = () => {
       const now = new Date().getTime();
@@ -187,7 +193,7 @@ function Home() {
         <div className="overlay">
           <h1>"Join the Competition"</h1>
           <p>The wording should be clear, concise, and persuasive, guiding users through their journey on your website.</p>
-          <button className="register-button">Register</button>
+          <button className="register-button" onClick={(e)=>Register(e)}>Register</button>
         </div>
       </Banner>
     </Wrapper>
