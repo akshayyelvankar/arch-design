@@ -241,7 +241,7 @@ const Registration = () => {
         }
         if(data.message ==='User already exists with this email.')
         {
-          alert('User already exists with this email.')
+          alert('User email Id already exists.')
         }
         if(data.message === 'Internal server error')
         {
@@ -249,12 +249,7 @@ const Registration = () => {
         }
         
       })
-      // .catch(err=>{
-      //   if(err.response && err.response.status === 400){
-      //     alert('User with this email already exists.')
-      //   }
-      // })
-  };
+    };
 
 
   // Submit Form
