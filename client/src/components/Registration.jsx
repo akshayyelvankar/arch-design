@@ -233,18 +233,17 @@ const Registration = () => {
 
       .then((response) => response.json())
       .then((data) => {
-        
         if (data.message === 'Email sent successfully') {
           const sotp = data.otp
           alert("OTP Send Successfully in Your Mail !")
           console.log('otp is:', sotp)
           setUserotp(sotp)
         }
-        if (data.message === 'User with this email already exists.') {
-          alert("Email already exists in the database")
-        }
-         else {
-          alert("Process Failed")
+        
+      })
+      .catch(err=>{
+        if(err.response && err.response.status === 400){
+          alert('User with this email already exists.')
         }
       })
   };

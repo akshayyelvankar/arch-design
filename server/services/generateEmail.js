@@ -20,6 +20,16 @@ const sendEmail = expressAsyncHandler(async (req, res) => {
   const { email } = req.body;
   
   console.log(email);
+  try {
+    const user = await getUserByEmailFromDatabase(email);
+    if (user) {
+      // User with this email already exists
+      return res.status(400).json({ message: "User already exists with this email." });
+    }
+  } catch (error) {
+    console.error("Error while checking for existing user:", error);
+    return res.status(500).json({ message: "Internal server error" });
+  }
 
   const otp=generateOTP()
   
