@@ -2,6 +2,7 @@ const expressAsyncHandler = require("express-async-handler");
 const dotenv = require("dotenv");
 const nodemailer = require("nodemailer");
 const generateOTP = require("./generateOTP");
+
 dotenv.config();
 
 let transporter = nodemailer.createTransport({
@@ -17,11 +18,7 @@ let transporter = nodemailer.createTransport({
 const sendEmail = expressAsyncHandler(async (req, res) => {
   
   const { email } = req.body;
-  const existingUser = await UserModel.findOne({ email });
-    if (existingUser) {
-      // User with the same email already exists
-      return res.status(400).json({ message: 'User with this email already exists.' });
-    }
+  
   console.log(email);
 
   const otp=generateOTP()
