@@ -93,6 +93,10 @@ app.post('/register', async (req, res) => {
     if (!email || !password) {
       return res.status(400).json({ message: 'Name, Email, and Password are required fields.' });
     }
+    const mobileNoPattern = /^[0-9]{10}$/;
+    if (!mobileNo.match(mobileNoPattern)) {
+      return res.status(400).json({ message: 'Invalid mobile number format. Please enter a 10-digit mobile number.' });
+    }
     // Generate a unique four-digit user ID       
     const userId = await generateUniqueUserId();
     const user = await UserModel.create({ userId, role, type, teamLeaderName, member1, member2, member3, member4, name, email, mobileNo, password })

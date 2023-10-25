@@ -257,6 +257,13 @@ const Registration = () => {
 
     e.preventDefault()
 
+  const mobileNoPattern = /^[0-9]{10}$/;
+
+  if (!mobileNo.match(mobileNoPattern)) {
+    alert('Invalid mobile number format');
+    return; 
+  }
+
     axios.post('https://arch-design-api.vercel.app/register', {
       userId: '', // Generate this based on the latest user ID
       role,
