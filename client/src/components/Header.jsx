@@ -1,31 +1,35 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 const Header = () => {
-    
-      document.addEventListener('DOMContentLoaded', function () {
-      // Get the navigation links
-      const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-  
-      // Get the mobile navbar toggle button
-      const navbarToggle = document.getElementById('navbarToggle');
-  
-      // Close the navbar when a navigation link is clicked
-      navLinks.forEach(link => {
-        link.addEventListener('click', () => {
-          if (navbarToggle.getAttribute('aria-expanded') === 'true') {
-            navbarToggle.click();
-          }
+    useEffect(() => {
+        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        const navbarToggle = document.getElementById('navbarToggle');
+
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (navbarToggle.getAttribute('aria-expanded') === 'true') {
+                    navbarToggle.click();
+                }
+            });
         });
-      });
-    });
-    
+    }, []);
+
     return (
         <Wrapper>
             <nav className="navbar navbars navbar-expand-lg navbar-light bg-light ">
                 <div className="container-fluid">
                     <NavLink className="navbar-brand nav_brands" to={'/'}>ARCH<span className="nav_text mx-2">Our Arch competetion</span></NavLink>
-                    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" id="navbarToggle">
+                    <button
+                        className="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false"
+                        aria-label="Toggle navigation"
+                        id="navbarToggle"
+                    >
                         <span className="navbar-toggler-icon"></span>
                     </button>
                 </div>
@@ -50,8 +54,8 @@ const Header = () => {
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
                                     <NavLink className="dropdown-item" to={'/schooldesign'}>School Design</NavLink>
-                               </li>
-                                <li><hr className="dropdown-divider"/></li>
+                                </li>
+                                <li><hr className="dropdown-divider" /></li>
                                 <li>
                                     <NavLink className="dropdown-item" to={'/landscapedesign'}>Landscape Design</NavLink>
                                 </li>
