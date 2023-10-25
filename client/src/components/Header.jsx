@@ -68,7 +68,7 @@ const Header = () => {
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li><NavLink className="dropdown-item nav-link" to={'/login'}>Login</NavLink></li>
                                 <li><hr className="dropdown-divider" /></li>
-                                <li><NavLink className="dropdown-item nav-link" to={'/register'}>Register</NavLink></li>
+                                <li><NavLink className="dropdown-item " to={'/register'}>Register</NavLink></li>
                             </ul>
                         </li>
                         <li className="nav-item">
