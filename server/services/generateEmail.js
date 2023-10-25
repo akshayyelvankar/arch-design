@@ -29,15 +29,24 @@ const sendEmail = expressAsyncHandler(async (req, res) => {
     text: `Your OTP is: ${otp}`,
 
   };
+  const emailAlreadyExists = checkIfEmailExists(email); // Implement the checkIfEmailExists function
 
-  transporter.sendMail(mailOptions, function (error, info) {
-    if (error) {
-      console.log(error);
-    } else {
-      console.log("Email sent successfully!");
-      res.status(200).json({ message: "Email sent successfully", otp });
-     }     
-  });
+  if (emailAlreadyExists) {
+    // The email is already registered
+    res.json({message:"Email is already registered"})
+    
+  }
+  else{
+    transporter.sendMail(mailOptions, function (error, info) {
+      if (error) {
+        console.log(error);
+      } else {
+        console.log("Email sent successfully!");
+        res.status(200).json({ message: "Email sent successfully", otp });
+       }     
+    });
+  }
+  
 });
 
 module.exports = { sendEmail };

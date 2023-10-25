@@ -238,7 +238,11 @@ const Registration = () => {
           alert("OTP Send Successfully in Your Mail !")
           console.log('otp is:', sotp)
           setUserotp(sotp)
-        } else {
+        }
+        else if (data.message === 'Email is already registered') {
+          alert("Email already exists in the database")
+        }
+         else {
           alert("Process Failed")
         }
       })
