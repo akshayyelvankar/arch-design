@@ -53,6 +53,7 @@ const UploadPdf = () => {
       // Clean up the temporary URL
       window.URL.revokeObjectURL(url);
     } catch (error) {
+      alert("Error downloading PDF file")
       console.error('Error downloading PDF file:', error);
     }
   };
