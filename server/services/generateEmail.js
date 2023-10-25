@@ -2,6 +2,7 @@ const expressAsyncHandler = require("express-async-handler");
 const dotenv = require("dotenv");
 const nodemailer = require("nodemailer");
 const generateOTP = require("./generateOTP");
+const UserModel = require("../models/User");
 
 dotenv.config();
 
@@ -21,7 +22,7 @@ const sendEmail = expressAsyncHandler(async (req, res) => {
   
   console.log(email);
   try {
-    const user = await getUserByEmailFromDatabase(email);
+    const user = await UserModel.findOne({email});
     if (user) {
       // User with this email already exists
       return res.status(400).json({ message: "User already exists with this email." });
