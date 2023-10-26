@@ -65,7 +65,7 @@ const Dashboard = () => {
   
   // Download Pdf
   const handleDownload = async (email) => {
-    e.preventDefault()
+  
     
     console.log(email)
     try {
