@@ -18,7 +18,7 @@ const Dashboard = () => {
     }
     fetchData();
   },[])
-  console.log(users)
+  
   const generateAndDownloadPDF = async (user) => {
     // Create a new PDF document
     const pdfDoc = await PDFDocument.create();
@@ -66,8 +66,6 @@ const Dashboard = () => {
   // Download Pdf
   const handleDownload = async (email) => {
   
-    
-    console.log(email)
     try {
       const response = await axios.get(`https://arch-design-api.vercel.app/download-pdf/${email}`, {
         responseType: 'blob', // Specify that the response should be treated as binary data
@@ -124,9 +122,6 @@ const Wrapper = styled.div`
   background: url(${Bg}) no-repeat center center fixed;
   background-size: cover;
 `;
-
-
-  
 
 const DashboardTitle = styled.h1`
   font-size: 3em;

@@ -236,7 +236,7 @@ const Registration = () => {
         if (data.message === 'Email sent successfully') {
           const sotp = data.otp
           alert("OTP Send Successfully in Your Mail !")
-          console.log('otp is:', sotp)
+          //console.log('otp is:', sotp)
           setUserotp(sotp)
         }
         if(data.message ==='User already exists with this email.')
