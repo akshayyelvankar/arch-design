@@ -13,7 +13,7 @@ const Dashboard = () => {
             const response = await axios.get('https://arch-design-api.vercel.app/users');
             setUsers(response.data);
         } catch(error){
-            console.log(error)
+            
         }
     }
     fetchData();
