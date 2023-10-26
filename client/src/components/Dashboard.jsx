@@ -66,7 +66,7 @@ const Dashboard = () => {
   // Download Pdf
   const handleDownload = async (email) => {
     e.preventDefault()
-    const{email}=users;
+    
     console.log(email)
     try {
       const response = await axios.get(`https://arch-design-api.vercel.app/download-pdf/${email}`, {
