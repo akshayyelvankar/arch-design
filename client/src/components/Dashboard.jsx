@@ -70,7 +70,7 @@ const Dashboard = () => {
       const response = await axios.get(`https://arch-design-api.vercel.app/download-pdf/${email}`, {
         responseType: 'blob', // Specify that the response should be treated as binary data
       });
-      console.log(response)
+    
       // Create a temporary URL for the PDF data and trigger the download
       const url = window.URL.createObjectURL(new Blob([response.data], { type: response.data.type }));
       const link = document.createElement('a');
