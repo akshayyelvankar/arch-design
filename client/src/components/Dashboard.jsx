@@ -64,7 +64,7 @@ const Dashboard = () => {
   };
   
   // Download Pdf
-  const handleDownload = async (e) => {
+  const handleDownload = async (email) => {
     e.preventDefault()
     const{email}=users;
     console.log(email)
@@ -105,7 +105,7 @@ const Dashboard = () => {
               <p>Name: {user.name}</p>
               <p>Email ID: {user.email}</p>
               <p>Mob: {user.mobileNo}</p>
-              <DownloadButton onClick={(e) => handleDownload(e)}>Download PDF</DownloadButton>
+              <DownloadButton onClick={() => handleDownload(user.email)}>Download PDF</DownloadButton>
             </CardBody>
           </Card>
         ))}
