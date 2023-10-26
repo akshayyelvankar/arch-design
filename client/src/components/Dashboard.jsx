@@ -83,7 +83,7 @@ const Dashboard = () => {
       window.URL.revokeObjectURL(url);
     } catch (error) {
       if(error){
-        alert("Error Downloading Pdf File")
+        alert("Pdf not Found")
       }
       console.error('Error Downloading Pdf File:', error);
     }
