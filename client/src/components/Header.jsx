@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 const Header = () => {
     useEffect(() => {
-        const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+        const navLinks = document.querySelectorAll('.nav-links');
         const navbarToggle = document.getElementById('navbarToggle');
 
         navLinks.forEach(link => {
@@ -36,16 +36,16 @@ const Header = () => {
                 <div className="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                         <li className="nav-item">
-                            <NavLink className="nav-link" to={'/'}>Home</NavLink>
+                            <NavLink className="nav-link nav-links" to={'/'}>Home</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link active" aria-current="page" to={'/about'} >Aboutus</NavLink>
+                            <NavLink className="nav-link nav-links" aria-current="page" to={'/about'} >Aboutus</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to={'/upload'}>Services</NavLink>
+                            <NavLink className="nav-link nav-links" to={'/upload'}>Services</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to={'/rule'}>Rules</NavLink>
+                            <NavLink className="nav-link nav-links" to={'/rule'}>Rules</NavLink>
                         </li>
                         <li className="nav-item dropdown">
                             <a className="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
@@ -53,11 +53,11 @@ const Header = () => {
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <li>
-                                    <NavLink className="dropdown-item nav-link" to={'/schooldesign'}>School Design</NavLink>
+                                    <NavLink className="dropdown-item nav-links" to={'/schooldesign'}>School Design</NavLink>
                                 </li>
                                 <li><hr className="dropdown-divider" /></li>
                                 <li>
-                                    <NavLink className="dropdown-item nav-link" to={'/landscapedesign'}>Landscape Design</NavLink>
+                                    <NavLink className="dropdown-item nav-links" to={'/landscapedesign'}>Landscape Design</NavLink>
                                 </li>
                             </ul>
                         </li>
@@ -66,13 +66,13 @@ const Header = () => {
                                 Register
                             </a>
                             <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <li><NavLink className="dropdown-item nav-link" to={'/login'}>Login</NavLink></li>
+                                <li><NavLink className="dropdown-item nav-links" to={'/login'}>Login</NavLink></li>
                                 <li><hr className="dropdown-divider" /></li>
-                                <li><NavLink className="dropdown-item nav-link" to={'/register'}>Register</NavLink></li>
+                                <li><NavLink className="dropdown-item nav-links" to={'/register'}>Register</NavLink></li>
                             </ul>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link " to={'/contact'} tabIndex="-1" aria-disabled="true">Contacts</NavLink>
+                            <NavLink className="nav-link nav-links" to={'/contact'} tabIndex="-1" aria-disabled="true">Contacts</NavLink>
                         </li>
                     </ul>
                 </div>
