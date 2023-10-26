@@ -67,6 +67,7 @@ const Dashboard = () => {
   const handleDownload = async (e) => {
     e.preventDefault()
     const{email}=users;
+    console.log(email)
     try {
       const response = await axios.get(`https://arch-design-api.vercel.app/download-pdf/${email}`, {
         responseType: 'blob', // Specify that the response should be treated as binary data
