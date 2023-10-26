@@ -63,7 +63,32 @@ const Dashboard = () => {
     saveAs(pdfBlob, `${user.name}_info.pdf`);
   };
   
+  // Download Pdf
+  const handleDownload = async (e) => {
+    e.preventDefault()
+    const{email}=user;
+    try {
+      const response = await axios.get(`https://arch-design-api.vercel.app/download-pdf/${email}`, {
+        responseType: 'blob', // Specify that the response should be treated as binary data
+      });
+      console.log(response)
+      // Create a temporary URL for the PDF data and trigger the download
+      const url = window.URL.createObjectURL(new Blob([response.data], { type: response.data.type }));
+      const link = document.createElement('a');
+      link.href = url;
+      link.setAttribute('download', 'user.pdf');
+      document.body.appendChild(link);
+      link.click();
 
+      // Clean up the temporary URL
+      window.URL.revokeObjectURL(url);
+    } catch (error) {
+      if(error){
+        alert("Error Downloading Pdf File")
+      }
+      console.error('Error Downloading Pdf File:', error);
+    }
+  };
   return (
     <Wrapper>
       <DashboardTitle>Dashboard</DashboardTitle> {/* Use the styled h1 */}
@@ -79,7 +104,7 @@ const Dashboard = () => {
               <p>Name: {user.name}</p>
               <p>Email ID: {user.email}</p>
               <p>Mob: {user.mobileNo}</p>
-              <DownloadButton onClick={() => generateAndDownloadPDF(user)}>Download PDF</DownloadButton>
+              <DownloadButton onClick={(e) => handleDownload(e)}>Download PDF</DownloadButton>
             </CardBody>
           </Card>
         ))}
